@@ -11,7 +11,7 @@ class Pokemon
     @id, @poke_name, @poke_type, @poke_hp, @db = id, poke_name, poke_type, poke_hp, db
   end
 
-  def alater_poke_hp(new_hp, db)
+  def alter_poke_hp(new_hp, db)
     
   end
 end
