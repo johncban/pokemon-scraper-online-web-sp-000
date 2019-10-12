@@ -1,17 +1,17 @@
 class Pokemon
-  attr_accessor :id, :poke_name, :poke_type, :poke_hp, :db
+  attr_accessor :id, :name, :type, :hp, :db
 
-  def self.save(poke_name, poke_type, db)
-    db.execute("INSERT INTO pokemon (poke_name, poke_type) VALUES (?, ?)", poke_name, poke_type)
+  def self.save(name, type, db)
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
   end
 
   def self.find(id_nu, db)
     poke_info = db.execute("SELECT * FROM pokemon WHERE id=?", id_num).flatten
-    Pokemon.new(id: poke_info[0], poke_name: poke_info[1], poke_type: poke_info[2], poke_hp: poke_info[3], db: db)
+    Pokemon.new(id: poke_info[0], name: poke_info[1], type: poke_info[2], hp: poke_info[3], db: db)
   end
 
-  def initialize(id:, poke_name:, poke_type:, poke_hp: nil, db:)
-    @id, @poke_name, @poke_type, @poke_hp, @db = id, poke_name, poke_type, poke_hp, db
+  def initialize(id:, name:, type:, hp: nil, db:)
+    @id, @name, @type, @hp, @db = id, name, type, hp, db
   end
 
   def alter_poke_hp(new_hp, db)
