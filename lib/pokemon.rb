@@ -12,6 +12,6 @@ class Pokemon
   end
 
   def alter_poke_hp(new_hp, db)
-    
+
   end
 end
