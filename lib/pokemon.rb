@@ -1,5 +1,5 @@
 class Pokemon
-  attr_acessor :id, :poke_name, :poke_type, :poke_hp, :db
+  attr_accessor :id, :poke_name, :poke_type, :poke_hp, :db
 
   def self.save(poke_name, poke_type, db)
     db.execute("INSERT INTO pokemon (poke_name, poke_type) VALUES (?, ?)", poke_name, poke_type)
